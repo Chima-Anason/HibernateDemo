@@ -29,5 +29,10 @@ public class Postservice {
 		
 		return postRepository.findByPeopleId(id);
 	}
+	
+	
+	public void insertPost(Post post) {
+		postRepository.save(post);
+	}
 
 }

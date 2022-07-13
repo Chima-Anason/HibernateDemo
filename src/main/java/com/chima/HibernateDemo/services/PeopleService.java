@@ -28,6 +28,10 @@ public class PeopleService {
 		
 		return peopleRepository.findByLocationId(id);
 	}
+	
+	public void insertPeople(People people) {
+		peopleRepository.save(people);
+	}
 
 
 

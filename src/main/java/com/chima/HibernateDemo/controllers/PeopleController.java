@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chima.HibernateDemo.models.People;
@@ -47,6 +49,13 @@ public class PeopleController {
 	@GetMapping("/users/location/{id}/users")
 	public List<People> getUsersByLocationId(@PathVariable Integer id) {
 		return peopleService.getPeopleByLocationId(id);
+	}
+	
+	
+	@PostMapping("/users/addNew")
+	public void addPeople(@RequestBody People people) {
+		
+		peopleService.insertPeople(people);
 	}
 	
 

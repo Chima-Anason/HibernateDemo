@@ -21,12 +21,15 @@ public class People {
 	private String lastname;
 	
 	@ManyToOne
-	@JoinColumn(name = "location_id")
+	@JoinColumn(name = "locationid", insertable = false, updatable = false)
 	private Location location;
 	private String email;
 	
 	@OneToMany(mappedBy = "people")
 	private List<Post> post;
+	
+	
+	private Integer locationid;
 	
 	
 	@JsonManagedReference
@@ -105,6 +108,16 @@ public class People {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	public Integer getLocationid() {
+		return locationid;
+	}
+
+
+	public void setLocationid(Integer locationid) {
+		this.locationid = locationid;
 	}
 	
 	

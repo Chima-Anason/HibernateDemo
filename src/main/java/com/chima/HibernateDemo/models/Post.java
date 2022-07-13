@@ -3,6 +3,7 @@ package com.chima.HibernateDemo.models;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,10 +18,12 @@ public class Post {
 	private LocalDateTime postDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "people_id")
+	@JoinColumn(name = "peopleid",insertable = false, updatable = false)
 	private People people;
 	private String details;
 	
+	
+	private Integer peopleid;
 	
 	
 	public Post() {
@@ -81,6 +84,14 @@ public class Post {
 
 	public void setDetails(String details) {
 		this.details = details;
+	}
+
+	public Integer getPeopleid() {
+		return peopleid;
+	}
+
+	public void setPeopleid(Integer peopleid) {
+		this.peopleid = peopleid;
 	}
 	
 	
