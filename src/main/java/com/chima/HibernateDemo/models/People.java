@@ -2,6 +2,7 @@ package com.chima.HibernateDemo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class People {
@@ -11,6 +12,8 @@ public class People {
 	
 	private String firstname;
 	private String lastname;
+	
+	@ManyToOne
 	private Location location;
 	private String email;
 	

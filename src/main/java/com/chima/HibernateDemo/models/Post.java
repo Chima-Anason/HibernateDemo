@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Post {
@@ -11,6 +12,8 @@ public class Post {
 	@Id
 	private Integer id;
 	private LocalDateTime postDate;
+	
+	@ManyToOne
 	private People people;
 	private String details;
 	
