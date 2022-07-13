@@ -18,6 +18,17 @@ public class Location {
 	private List<People> peoples;
 	
 	
+	
+	public List<People> getPeoples() {
+		return peoples;
+	}
+
+
+	public void setPeoples(List<People> peoples) {
+		this.peoples = peoples;
+	}
+
+
 	public Location() {
 		
 	}

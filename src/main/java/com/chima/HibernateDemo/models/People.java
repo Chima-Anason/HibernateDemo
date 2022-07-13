@@ -27,6 +27,15 @@ public class People {
 	
 	
 	
+	public List<Post> getPost() {
+		return post;
+	}
+
+
+	public void setPost(List<Post> post) {
+		this.post = post;
+	}
+	
 	
 	public People() {
 	
@@ -41,6 +50,8 @@ public class People {
 		this.location = location;
 		this.email = email;
 	}
+	
+	
 
 
 	public Integer getId() {
