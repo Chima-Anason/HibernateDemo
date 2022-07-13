@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chima.HibernateDemo.models.Location;
+import com.chima.HibernateDemo.models.People;
 import com.chima.HibernateDemo.services.LocationService;
 
 @RestController
@@ -32,6 +33,19 @@ public class LocationController {
 		return locationService.getLocationById(id);
 	}
 	
+	
+	
+	@GetMapping("/location/{id}/users")
+	public List<People> getPeopleByLocationId(@PathVariable Integer id) {
+		Optional<Location> location = locationService.getLocationById(id);
+		
+		if(location.isPresent()) {
+			 Location newlocation = location.get();
+			 
+			 return newlocation.getPeoples();
+		}
+		return null;
+	}
 	
 
 }

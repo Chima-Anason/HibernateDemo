@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chima.HibernateDemo.models.People;
+import com.chima.HibernateDemo.models.Post;
 import com.chima.HibernateDemo.services.PeopleService;
 
 @RestController
@@ -29,5 +30,18 @@ public class PeopleController {
 	public Optional<People> getPeopleById(@PathVariable Integer id) {
 		return peopleService.getPeopleById(id);
 	}
+	
+	
+	@GetMapping("/user/{id}/posts")
+	public List<Post> getPostByUserId(@PathVariable Integer id) {
+		Optional<People> people = peopleService.getPeopleById(id);
+		
+		if(people.isPresent()) {
+			return people.get().getPost();
+		}
+		return null;
+	}
+	
+	
 
 }
