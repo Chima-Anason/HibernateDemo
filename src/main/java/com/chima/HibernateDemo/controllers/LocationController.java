@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chima.HibernateDemo.models.Location;
@@ -45,6 +47,12 @@ public class LocationController {
 			 return newlocation.getPeoples();
 		}
 		return null;
+	}
+	
+	
+	@PostMapping("/locations/addNew")
+	public void addLocation(@RequestBody Location location) {
+		locationService.addLocation(location);
 	}
 	
 

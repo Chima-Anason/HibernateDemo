@@ -26,6 +26,8 @@ public class LocationService {
 		return locationRepository.findById(id);
 	}
 	
-	
+	public void addLocation(Location location) {
+		locationRepository.save(location);
+	}
 
 }
