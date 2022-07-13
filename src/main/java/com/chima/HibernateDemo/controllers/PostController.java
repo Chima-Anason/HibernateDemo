@@ -30,5 +30,12 @@ public class PostController {
 		
 		return postservice.getPostById(id);
 	}
+	
+	
+	@GetMapping("/posts/user/{id}/posts")
+	public List<Post> getPostsByPeopleId(@PathVariable Integer id) {
+		
+		return postservice.getPostsByPeopleId(id);
+	}
 
 }

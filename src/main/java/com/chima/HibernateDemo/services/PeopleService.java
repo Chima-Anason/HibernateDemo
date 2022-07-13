@@ -24,6 +24,11 @@ public class PeopleService {
 		return peopleRepository.findById(id);
 	}
 
+	public List<People> getPeopleByLocationId(Integer id) {
+		
+		return peopleRepository.findByLocationId(id);
+	}
+
 
 
 }

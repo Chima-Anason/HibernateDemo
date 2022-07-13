@@ -25,4 +25,9 @@ public class Postservice {
 		return postRepository.findById(id);
 	}
 
+	public List<Post> getPostsByPeopleId(Integer id) {
+		
+		return postRepository.findByPeopleId(id);
+	}
+
 }

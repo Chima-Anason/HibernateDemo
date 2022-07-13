@@ -43,5 +43,11 @@ public class PeopleController {
 	}
 	
 	
+	
+	@GetMapping("/users/location/{id}/users")
+	public List<People> getUsersByLocationId(@PathVariable Integer id) {
+		return peopleService.getPeopleByLocationId(id);
+	}
+	
 
 }
