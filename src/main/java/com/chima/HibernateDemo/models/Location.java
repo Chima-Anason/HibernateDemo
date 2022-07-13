@@ -1,7 +1,10 @@
 package com.chima.HibernateDemo.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Location {
@@ -9,6 +12,10 @@ public class Location {
 	@Id
 	private Integer id;
 	private String name;
+	
+	
+	@OneToMany(mappedBy = "location")
+	private List<People> peoples;
 	
 	
 	public Location() {

@@ -1,8 +1,11 @@
 package com.chima.HibernateDemo.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class People {
@@ -16,6 +19,9 @@ public class People {
 	@ManyToOne
 	private Location location;
 	private String email;
+	
+	@OneToMany(mappedBy = "people")
+	private List<Post> post;
 	
 	
 	
