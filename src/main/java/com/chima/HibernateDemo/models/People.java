@@ -8,6 +8,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class People {
 	
@@ -26,7 +29,7 @@ public class People {
 	private List<Post> post;
 	
 	
-	
+	@JsonManagedReference
 	public List<Post> getPost() {
 		return post;
 	}
@@ -84,6 +87,7 @@ public class People {
 	}
 
 
+	@JsonBackReference
 	public Location getLocation() {
 		return location;
 	}

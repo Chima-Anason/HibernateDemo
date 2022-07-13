@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Location {
 	
@@ -18,7 +20,7 @@ public class Location {
 	private List<People> peoples;
 	
 	
-	
+	@JsonManagedReference
 	public List<People> getPeoples() {
 		return peoples;
 	}
