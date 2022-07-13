@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -14,6 +15,7 @@ public class Post {
 	private LocalDateTime postDate;
 	
 	@ManyToOne
+	@JoinColumn(name = "people_id")
 	private People people;
 	private String details;
 	
