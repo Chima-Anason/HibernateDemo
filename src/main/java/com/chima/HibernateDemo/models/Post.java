@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Post {
@@ -60,7 +61,7 @@ public class Post {
 	}
 
 
-    @JsonBackReference
+    @JsonIgnore
 	public People getPeople() {
 		return people;
 	}
