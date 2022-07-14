@@ -3,6 +3,7 @@ package com.chima.HibernateDemo.models;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,7 +17,7 @@ public class Post {
 	private Integer id;
 	private LocalDateTime postDate;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "peopleid",insertable = false, updatable = false)
 	private People people;
 	private String details;

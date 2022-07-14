@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,12 +22,12 @@ public class People {
 	private String firstname;
 	private String lastname;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "locationid", insertable = false, updatable = false)
 	private Location location;
 	private String email;
 	
-	@OneToMany(mappedBy = "people", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "people", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Post> post;
 	
 	
