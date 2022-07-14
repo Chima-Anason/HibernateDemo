@@ -2,6 +2,7 @@ package com.chima.HibernateDemo.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -25,7 +26,7 @@ public class People {
 	private Location location;
 	private String email;
 	
-	@OneToMany(mappedBy = "people")
+	@OneToMany(mappedBy = "people", cascade = CascadeType.ALL)
 	private List<Post> post;
 	
 	
