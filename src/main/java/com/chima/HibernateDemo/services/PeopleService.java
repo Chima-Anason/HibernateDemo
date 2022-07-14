@@ -33,6 +33,16 @@ public class PeopleService {
 		peopleRepository.save(people);
 	}
 
+	public void updateUser(People people) {
+		peopleRepository.save(people);
+		
+	}
+
+	public void deletePost(Integer id) {
+		peopleRepository.deleteById(id);
+		
+	}
+
 
 
 }
